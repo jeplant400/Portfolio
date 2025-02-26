@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Text
+comment0.text=\r\n\ Displayed\ text.\r\n\r\n
+comment1.params=message
+comment1.target=Text(java.lang.String)
+comment1.text=\r\n\ Constructor\ for\ the\ Text\ class.\r\n\r\n
+comment2.params=message
+comment2.target=void\ setText(java.lang.String)
+comment2.text=\r\n\ Updates\ the\ text\ message\ displayed\ by\ this\ actor.\r\n\r\n
+comment3.params=
+comment3.target=greenfoot.GreenfootImage\ getImageText()
+comment3.text=\r\n\ Getter\ for\ the\ current\ text\ image.\r\n\r\n
+numComments=4

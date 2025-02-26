@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=Space
+comment0.text=\r\n\ A\ space\ on\ the\ game\ board.\r\n\r\n\ based\ on\ Dr.\ Canada\ code\r\n
+comment1.params=
+comment1.target=Space()
+comment1.text=\r\n\ constructor\ for\ the\ Space\ class.\r\n\ \r\n
+comment2.params=safeSpace
+comment2.target=Space(boolean)
+comment2.text=\r\n\ Constructor\ for\ creating\ a\ Space\ with\ a\ specific\ safety\ state.\r\n\r\n
+comment3.params=
+comment3.target=void\ scaleImage()
+comment3.text=\r\n\ Scales\ the\ image\ of\ the\ space.\r\n
+comment4.params=playerIndex
+comment4.target=boolean\ isOccupiedByPieceForPlayerIndex(int)
+comment4.text=\r\n\ Getter\ for\ the\ occupied\ state\ of\ the\ space\ for\ a\ specific\ player\ index.\r\n
+comment5.params=playerIndex\ occupied
+comment5.target=void\ setOccupiedByPieceForPlayerIndex(int,\ boolean)
+comment5.text=\r\n\ Setter\ for\ the\ occupied\ state\ of\ the\ space\ for\ a\ specific\ player\ index.\r\n\r\n
+comment6.params=
+comment6.target=boolean\ isSafeSpace()
+comment6.text=\r\n\ Getter\ for\ the\ safe\ space\ state.\r\n\r\n
+comment7.params=safeSpace
+comment7.target=void\ setSafeSpace(boolean)
+comment7.text=\r\n\ Setter\ for\ the\ safe\ space\ state.\r\n\r\n
+numComments=8

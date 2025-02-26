@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Computer
+comment0.text=\r\n\ RPS\ AI\r\n\r\n
+comment1.params=
+comment1.target=java.lang.String\ generateMove()
+comment1.text=\r\n\ Generates\ a\ random\ move\ for\ the\ computer.\r\n\r\n
+comment2.params=
+comment2.target=java.lang.String\ getLastMove()
+comment2.text=\r\n\ Getter\ for\ the\ last\ move\ made\ by\ the\ computer.\r\n\r\n
+comment3.params=move
+comment3.target=void\ setLastMove(java.lang.String)
+comment3.text=\r\n\ Sets\ the\ last\ move\ for\ the\ computer.\r\n\r\n
+comment4.params=playerMove
+comment4.target=java.lang.String\ determineWinner(java.lang.String)
+comment4.text=\r\n\ Determines\ the\ winner.\r\n\r\n
+numComments=5
