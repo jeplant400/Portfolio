@@ -1,0 +1,198 @@
+[gd_scene format=3 uid="uid://b31bxcofmhyst"]
+
+[ext_resource type="PackedScene" uid="uid://diorcvh56bqpg" path="res://scenes/play area/play_area.tscn" id="1_01db0"]
+[ext_resource type="Theme" uid="uid://3j6fh54pk25t" path="res://assets/menu_theme.tres" id="1_eka2i"]
+[ext_resource type="Script" uid="uid://cpblqd26u1df8" path="res://scenes/UI/game_manager.gd" id="1_tl5mg"]
+[ext_resource type="PackedScene" uid="uid://fpn7ex7fdk4w" path="res://scenes/UI/main-user-interface.tscn" id="2_aqc0r"]
+[ext_resource type="PackedScene" uid="uid://ey3fom8etsq0" path="res://scenes/UI/full_shop.tscn" id="5_eka2i"]
+[ext_resource type="PackedScene" uid="uid://dc8776pgafhft" path="res://scenes/UI/cursor_tooltip.tscn" id="5_r72w0"]
+[ext_resource type="AudioStream" uid="uid://mh7lohxkhpla" path="res://music/empty factory.wav" id="7_34ocb"]
+[ext_resource type="AudioStream" uid="uid://b8ceoojmfqait" path="res://music/chime factory.wav" id="8_ugkkn"]
+[ext_resource type="AudioStream" uid="uid://dickypdm22o8r" path="res://music/The Cats Meow.wav" id="9_wbmm5"]
+[ext_resource type="AudioStream" uid="uid://bi0vgm84f6vxb" path="res://music/Falling Blocks.wav" id="10_bqvk7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_34ocb"]
+content_margin_left = 10.0
+content_margin_top = 1.0
+content_margin_right = 10.0
+content_margin_bottom = 1.0
+bg_color = Color(0.6772323, 0.5983915, 0.59208244, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.133364, 0.133364, 0.133364, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_57qmd"]
+shuffle = true
+fade_time = 1.0
+stream_count = 4
+stream_0 = ExtResource("7_34ocb")
+stream_1 = ExtResource("8_ugkkn")
+stream_2 = ExtResource("9_wbmm5")
+stream_3 = ExtResource("10_bqvk7")
+
+[node name="GameManager" type="Control" unique_id=255460626]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1156.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_eka2i")
+script = ExtResource("1_tl5mg")
+
+[node name="ui_container" type="HBoxContainer" parent="." unique_id=581701525]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 2308.0
+offset_bottom = 68.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.13
+
+[node name="Control2" type="Control" parent="ui_container" unique_id=1272418852]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CurrencyUI" parent="ui_container/Control2" unique_id=476897754 instance=ExtResource("2_aqc0r")]
+unique_name_in_owner = true
+top_level = true
+layout_mode = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="ui_container/Control2" unique_id=411712238]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 18.0
+offset_right = 316.0
+offset_bottom = 58.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ui_container/Control2/PanelContainer" unique_id=1212849530]
+layout_mode = 2
+text = "Press SHIFT to view upgrades"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="empty node" type="Control" parent="ui_container" unique_id=179880719]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="playable windows" type="HBoxContainer" parent="." unique_id=769805285]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 18.0
+offset_transform_enabled = true
+offset_transform_visual_only = false
+
+[node name="game container" type="SubViewportContainer" parent="playable windows" unique_id=776031567]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+stretch = true
+
+[node name="game viewport" type="SubViewport" parent="playable windows/game container" unique_id=1216573127]
+unique_name_in_owner = true
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="TileMapLayer" parent="playable windows/game container/game viewport" unique_id=1186091628 instance=ExtResource("1_01db0")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="playable windows/game container/game viewport" unique_id=1472483077]
+layer = 3
+follow_viewport_enabled = true
+
+[node name="PanelContainer" type="PanelContainer" parent="playable windows/game container/game viewport/CanvasLayer" unique_id=460154666]
+top_level = true
+offset_left = -540.0
+offset_top = 111.0
+offset_right = -420.0
+offset_bottom = 154.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_34ocb")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="playable windows/game container/game viewport/CanvasLayer/PanelContainer" unique_id=832904027]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="playable windows/game container/game viewport/CanvasLayer/PanelContainer/HBoxContainer" unique_id=1566277544]
+layout_mode = 2
+theme = ExtResource("1_eka2i")
+theme_override_colors/default_color = Color(0.12005126, 0.12005126, 0.12005126, 1)
+text = "FOOD: "
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FoodPillText" type="RichTextLabel" parent="playable windows/game container/game viewport/CanvasLayer/PanelContainer/HBoxContainer" unique_id=1673785985]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_eka2i")
+theme_override_colors/default_color = Color(0.12005126, 0.12005126, 0.12005126, 1)
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="shop container" type="SubViewportContainer" parent="playable windows" unique_id=1643333875]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+stretch = true
+
+[node name="shop viewport" type="SubViewport" parent="playable windows/shop container" unique_id=537666276]
+unique_name_in_owner = true
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="full shop" parent="playable windows/shop container/shop viewport" unique_id=204616710 instance=ExtResource("5_eka2i")]
+
+[node name="cursor_tooltip" parent="." unique_id=2097758532 instance=ExtResource("5_r72w0")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=492924857]
+stream = SubResource("AudioStreamPlaylist_57qmd")
+volume_db = -10.0
+autoplay = true
+bus = &"Music"
+
+[node name="victory_container" type="PanelContainer" parent="." unique_id=661637916]
+unique_name_in_owner = true
+visible = false
+custom_maximum_size = Vector2(400, -1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.5
+anchor_right = 0.25
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -60.0
+offset_right = 200.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="victory_container" unique_id=2093101703]
+layout_mode = 2
+text = "Congratulations on escaping the factory!
+Thanks for playing!"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
